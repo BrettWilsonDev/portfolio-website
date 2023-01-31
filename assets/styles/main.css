@@ -82,18 +82,39 @@ nav div {
     float: right;
     display: flex; 
     justify-content: flex-end;
-    color: #fff;
+    /* color: #fff; */
 }
 
 #tabs > li{
     margin-right: 1rem;
-    border: 1px solid #ccc
+    /* border: 1px solid #ccc */
 }
 
 .aTabs span {
     margin: 1rem;
-    color: #fff;
+    /* color: #fff; */
 }
+
+/* .aTabs {
+    border: 1px solid #f3f3f3;
+    border-top: 1px solid blue;
+    border-right: 1px solid green;
+    border-bottom: 1px solid red;
+    border-left: 1px solid pink;
+
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+} */
 
 
 
