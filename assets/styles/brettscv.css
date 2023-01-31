@@ -1,0 +1,73 @@
+
+
+.backGroundBox {
+    background-color: #006494; 
+    width: 95%; 
+    height: 1000px; 
+    margin: auto; 
+    margin-top: 40px; 
+    border: 15px solid #003554;
+    padding: 3%;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    word-wrap: break-word;
+}
+
+a:hover {
+    text-decoration: underline;
+    text-underline-offset: 1.5px;
+}
+
+@keyframes spinborder {
+    0%   {        
+        border-top: 15px solid #cc2900;
+        border-right: 15px solid #003554;
+        border-bottom: 15px solid #003554;
+        border-left: 15px solid #003554;
+    }
+    
+    25%  {        
+        border-top: 15px solid #003554;
+        border-right: 15px solid #cc2900;
+        border-bottom: 15px solid #003554;
+        border-left: 15px solid #003554;
+    }
+    
+    50%  {    
+        border-top: 15px solid #003554;
+        border-right: 15px solid #003554;
+        border-bottom: 15px solid #cc2900;
+        border-left: 15px solid #003554;
+    }
+    
+    75% {
+        border-top: 15px solid #003554;
+        border-right: 15px solid #003554;
+        border-bottom: 15px solid #003554;
+        border-left: 15px solid #cc2900;
+    }
+    100% {
+        border-top: 15px solid #cc2900;
+        border-right: 15px solid #003554;
+        border-bottom: 15px solid #003554;
+        border-left: 15px solid #003554;
+    }
+
+}
+
+.backGroundBox {
+    animation-timing-function: linear;
+    animation-name: spinborder ;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+
+} 
+
+
+
+
