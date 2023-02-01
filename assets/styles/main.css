@@ -16,7 +16,7 @@ fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed, 
 figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
+burgerMneu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
@@ -27,7 +27,7 @@ time, mark, audio, video {
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+footer, header, hgroup, burgerMneu, nav, section {
 	display: block;
 }
 body {
@@ -58,7 +58,7 @@ html * {
 }
 
 body {
-    background: linear-gradient(109.6deg, rgb(43, 1, 91) 13.4%, rgb(122, 2, 54) 100.2%);
+    background: linear-gradient(-109.6deg, rgb(43, 1, 91) 13.4%, rgb(122, 2, 54) 100.2%);
 	background-size: 400% 400%;
 	animation: gradient 300s ease infinite;
 	height: 100vh;
@@ -161,15 +161,159 @@ p {
 
 @media only screen and (max-width: 740px) {
     .aTabs {
-        display: none;
+        /* display: none; */
         visibility: hidden;
     }
     #tabs {
-        display: none;
+        /* display: none; */
         visibility: hidden;
     }
 }
 
+/* hamburger burgerMneu */
+
+#burgerMneuToggle
+{
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+
+    visibility: hidden;
+
+    z-index: 1;
+
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+#burgerMneuToggle a
+{
+    text-decoration: none;
+    color: #fff;
+
+    transition: color 0.3s ease;
+}
+
+#burgerMneuToggle a:hover
+{
+    color: #cc2900;
+}
+
+
+#burgerMneuToggle input
+{
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+
+    cursor: pointer;
+
+    opacity: 0;
+    z-index: 2; 
+
+    -webkit-touch-callout: none;
+}
+
+#burgerMneuToggle span
+{
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+
+    background: #fff;
+    border-radius: 3px;
+
+    z-index: 1;
+
+    transform-origin: 4px 0px;
+
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                opacity 0.55s ease;
+}
+
+#burgerMneuToggle span:first-child
+{
+    transform-origin: 0% 0%;
+}
+
+#burgerMneuToggle span:nth-last-child(2)
+{
+    transform-origin: 0% 100%;
+}
+
+#burgerMneuToggle input:checked ~ span
+{
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: #fff;
+}
+
+
+#burgerMneuToggle input:checked ~ span:nth-last-child(3)
+{
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+
+#burgerMneuToggle input:checked ~ span:nth-last-child(2)
+{
+    transform: rotate(-45deg) translate(0, -1px);  
+}
+
+#burgerMneu
+{
+    position: absolute;
+    width: 300px;
+    margin: -100px 0 0 -50px;
+    padding: 50px;
+    padding-top: 125px;
+
+    background: #000;
+    list-style-type: none;
+    -webkit-font-smoothing: antialiased;
+
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#burgerMneu li
+{
+    padding: 10px 0;
+    font-size: 22px;
+}
+
+#burgerMneuToggle input:checked ~ ul
+{
+    transform: none;
+}
+
+.burgerIcons {
+    font-size: 20px;
+}
+
+
+@media only screen and (max-width: 740px) {
+    #burgerMneuToggle {
+        visibility: visible;
+    }
+    #webName {
+
+        margin-left: 60px;
+    }
+    .tabs {
+        visibility: visible;
+    }
+}
 
 
 
