@@ -12,7 +12,7 @@ h1{
     text-transform: uppercase;
     padding: 25px 0;
     letter-spacing: 3px;
-    color: #ffffff;
+    color: #fff;
 }
 
 /*Timeline*/
@@ -34,7 +34,7 @@ h1{
 
 .timeline ul li:hover .time{
     transform: scale(0.99);
-    box-shadow: 0 0 0 3px#cc2900;
+    box-shadow: 0 0 0 3px #cc2900;
     transition: 0.3s;
 }
 
@@ -63,9 +63,9 @@ h1{
     top: 30px;
     width: 10px;
     height: 10px;
-    background-color: #006494;
+    background-color: #000;
     border-radius: 50%;
-    box-shadow: 0 0 0 3px#003554;
+    box-shadow: 0 0 0 3px#fff;
     transition: 0.3s;
 }
 
@@ -79,8 +79,8 @@ h1{
 
 .timeline ul li:hover::before{
     transform: scale(1.2);
-    background-color: #006494;
-    box-shadow: 0 0 0 3px#cc2900;
+    background-color: #fff; /* middle*/
+    box-shadow: 0 0 0 3px #cc2900;
     transition: 0.3s;
 
 }
@@ -91,7 +91,7 @@ h1{
     font-size: 18px;
     padding: 4px 9px;
     margin-bottom: 15px;
-    background-color: #006494;
+    background-color: #000;
     border-radius: 20px;
     transition: 0.3s;
 }

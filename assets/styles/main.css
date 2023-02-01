@@ -292,6 +292,11 @@ p {
     font-size: 22px;
 }
 
+#burgerMneu li a
+{
+    font-size: 26px;
+}
+
 #burgerMneuToggle input:checked ~ ul
 {
     transform: none;
