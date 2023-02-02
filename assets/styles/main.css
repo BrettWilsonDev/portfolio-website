@@ -59,8 +59,8 @@ html * {
 
 body {
     background: linear-gradient(-109.6deg, rgb(43, 1, 91) 13.4%, rgb(122, 2, 54) 100.2%);
-	background-size: 400% 400%;
-	animation: gradient 300s ease infinite;
+	background-size: 800% 800%;
+	animation: gradient 250s ease infinite;
 	height: 100vh;
     color: #fff;
 }
