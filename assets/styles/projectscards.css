@@ -29,7 +29,7 @@
     margin: 5%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 2%;
+    grid-gap: 20px;
     width: auto;
     max-width: 100%;
 }
@@ -94,38 +94,78 @@ article img {
     height: 250px;
 }
 
+.card {
+    background: black;
+}
 
-@media only screen and (max-width: 394px) {
+.cardBtns {
+    /* display:flex; 
+    flex-direction:column; 
+    flex:1;
+    margin-top: auto;
+    justify-content: center; */
+
+    width: 100%;
+}
+
+.outerCard {
+    /* width: 1rem; */
+    padding: 0.9rem;
+    background-color: #000;
+    border: 2px solid #fff;
+    color: #fff;
+    /* width: 50px; */
+
+
+    position: absolute; 
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 50px; /* Need a specific value to work */
+
+    bottom: 5px;
+}
+
+
+
+.outerCard:hover {
+    color: #000;
+    background-color: #fff;
+    border-color: #cc2900;
+}
+
+/* @media only screen and (max-width: 394px) {
     
     .card {
         width: auto;
         max-width: 90%;
     }
-}
+} */
 
-@media only screen and (max-width: 340px) {
+/* @media only screen and (max-width: 340px) {
     
     .card {
         width: auto;
         max-width: 85%;
     }
-}
+} */
 
-@media only screen and (max-width: 330px) {
+/* @media only screen and (max-width: 330px) {
     
     .card {
         width: auto;
         max-width: 84%;
     }
-}
+} */
 
-@media only screen and (max-width: 321px) {
+/* @media only screen and (max-width: 321px) {
     
     .card {
         width: auto;
         max-width: 82%;
     }
-}
+} */
 
 @media only screen and (max-width: 794px) {
     .card {
@@ -139,8 +179,19 @@ article img {
     }
 }
 
+@media only screen and (max-width: 794px) {
+    .outerCard {
+    }
+}
+
+@media only screen and (max-width: 678px) {
+    
+    .lastcard {
+        margin-bottom: 350px;
+    }
+}
+
 
 
 /* ghahasghiaw */
  /* gbhyhusghfuiwa */
-/* wguh */
