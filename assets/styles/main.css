@@ -174,10 +174,13 @@ p {
 
 #burgerMneuToggle
 {
+    
     display: block;
     position: absolute;
     top: 10px;
-    left: 20px;
+    /* left: 20px; */
+
+    right: 20px;
 
     visibility: hidden;
 
@@ -236,6 +239,8 @@ p {
     transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
                 background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
                 opacity 0.55s ease;
+
+    transform: translate(0, 0);
 }
 
 #burgerMneuToggle span:first-child
@@ -255,6 +260,21 @@ p {
     background: #fff;
 }
 
+#burgerMneuToggle input:checked ~ #burgerMneu {
+    display: block;
+    opacity: 1;
+    transform: none;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.5s ease, visibility 0s linear 0.5s;
+    visibility: visible;
+  }
+
+  #burgerMneuToggle input:not(:checked) ~ #burgerMneu {
+    opacity: 0;
+    transform: translate(100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.5s ease, visibility 0s linear 0.5s;
+    visibility: hidden;
+}
+
 
 #burgerMneuToggle input:checked ~ span:nth-last-child(3)
 {
@@ -268,23 +288,20 @@ p {
     transform: rotate(-45deg) translate(0, -1px);  
 }
 
-#burgerMneu
-{
+#burgerMneu {
+    display: none;
     position: absolute;
-    width: 300px;
-    margin: -100px 0 0 -50px;
+    width: 250px;
+    margin: -100px 0 0 -297px;
     padding: 50px;
     padding-top: 125px;
-
     background: #000;
     list-style-type: none;
     -webkit-font-smoothing: antialiased;
-
-    transform-origin: 0% 0%;
-    transform: translate(-100%, 0);
-
-    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
-}
+    transform-origin: 100% 0%;
+    transform: translate(100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.5s ease;
+  }
 
 #burgerMneu li
 {
@@ -306,6 +323,11 @@ p {
     font-size: 20px;
 }
 
+body.menu-open {
+    overflow: hidden;
+}
+
+
 
 @media only screen and (max-width: 740px) {
     #burgerMneuToggle {
@@ -313,7 +335,9 @@ p {
     }
     #webName {
 
-        margin-left: 60px;
+        /* margin-left: 60px; */
+        position: relative;
+        z-index: 3;
     }
     .tabs {
         visibility: visible;
