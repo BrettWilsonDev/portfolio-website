@@ -51,13 +51,13 @@
     border-radius: 5px;
     font-size: 1rem;
     color: #fff;
-    background-color: #333;
+    background-color: #000;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
   }
   
   .project-card button:hover {
-    background-color: #555;
+    background-color: #cc2900;
   }
   
   .project-card .button-container {
@@ -68,7 +68,6 @@
   
   .project-card {
     background: linear-gradient(to bottom, #7a0236, #2b015b);
-    /* rest of the styles */
   }
   
   
