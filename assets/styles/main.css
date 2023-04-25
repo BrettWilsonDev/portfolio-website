@@ -345,7 +345,7 @@ body.menu-open {
 }
 
 /* js canvass */
-#background-canvas {
+#canvas {
     position: fixed;
     top: 0;
     left: 0;
