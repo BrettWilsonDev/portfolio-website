@@ -105,6 +105,16 @@ footer {
     }
 }
 
+#mainh1 {
+    max-width: 55%;
+}
+
+@media only screen and (max-width: 1355px) {
+    #mainh1 {
+        max-width: 85%;
+    }
+}
+
 body p {
     padding: 5%;
     margin: 0 auto;
