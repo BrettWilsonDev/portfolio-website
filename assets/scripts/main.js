@@ -7,70 +7,38 @@ canvas.height = window.innerHeight;
 ctx.strokeStyle = "rgba(204, 41, 0, 0.5)";
 ctx.lineWidth = 0.25;
 
-// let x = Math.random() * canvas.width;
-// let y = Math.random() * canvas.height;
-// let vx = (Math.random() - 0.5) * 10;
-// let vy = (Math.random() - 0.5) * 10;
+const speed = 0.5;
 
-
-ux = (Math.random() - 0.5) * 10;
-uy = (Math.random() - 0.5) * 10;
-
-let x = 0;
-let y = 0;
-// let vx = (Math.random() - 0.5) * 10;
-// let vy = (Math.random() - 0.5) * 10;
-
-let bx = canvas.width;
-let by = canvas.height;
-// let bvx = (Math.random() - 0.5) * 10;
-// let bvy = (Math.random() - 0.5) * 10;
-
-vx = ux;
-vy = uy;
-bvx = ux;
-bvy = uy;
-
-function animate() {
-  requestAnimationFrame(animate);
+function animate(x, y, vx, vy) {
+  requestAnimationFrame(() => animate(x, y, vx, vy));
 
   ctx.beginPath();
   ctx.moveTo(x, y);
-  x += vx;
-  y += vy;
+  x += vx * speed;
+  y += vy * speed;
   ctx.lineTo(x, y);
   ctx.stroke();
 
   if (x < 0 || x > canvas.width) {
-    vx = -vx;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    vx = -vx; // Reverse the x direction
   }
 
   if (y < 0 || y > canvas.height) {
-    vy = -vy;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    vy = -vy; // Reverse the y direction
   }
 }
 
-function banimate() {
-    requestAnimationFrame(banimate);
-  
-    ctx.beginPath();
-    ctx.moveTo(bx, by);
-    bx += bvx;
-    by += bvy;
-    ctx.lineTo(bx, by);
-    ctx.stroke();
-  
-    if (bx < 0 || bx > canvas.width) {
-      bvx = -bvx;
-    }
-  
-    if (by < 0 || by > canvas.height) {
-      bvy = -bvy;
-    }
-  }
-
-animate();
-banimate()
+animate(0, 0, 1, 1); // Move diagonally from top-left to bottom-right
+animate(canvas.width, canvas.height, -1, -1); // Move diagonally from bottom-right to top-left
+animate(0, canvas.height, 1, -1); // Move diagonally from bottom-left to top-right
+animate(canvas.width, 0, -1, 1); // Move diagonally from top-right to bottom-left
 
 
 
+// animate(0, 0, speed, speed);
+// animate(canvas.width, canvas.height, speed, speed);
+
+// animate(0, canvas.height, speed, speed);
+// animate(canvas.width, 0, speed, speed);
