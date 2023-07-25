@@ -5,9 +5,9 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 ctx.strokeStyle = "rgba(204, 41, 0, 0.5)";
-ctx.lineWidth = 0.25;
+ctx.lineWidth = 0.35;
 
-const speed = 0.5;
+const speed = 0.3;
 
 function animate(x, y, vx, vy) {
   requestAnimationFrame(() => animate(x, y, vx, vy));
