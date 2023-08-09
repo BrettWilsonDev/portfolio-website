@@ -129,7 +129,7 @@ nav div {
 }
 
 .aTabs:hover {
-    border: 1px solid #cc2900;
+    border: 1px solid #CC3300;
     transition: 0.5s
 
 }
@@ -200,7 +200,7 @@ p {
 
 #burgerMneuToggle a:hover
 {
-    color: #cc2900;
+    color: #CC3300;
 }
 
 

@@ -34,7 +34,7 @@ h1{
 
 .timeline ul li:hover .time{
     transform: scale(0.99);
-    box-shadow: 0 0 0 3px #cc2900;
+    box-shadow: 0 0 0 3px #CC3300;
     transition: 0.3s;
 }
 
@@ -80,7 +80,7 @@ h1{
 .timeline ul li:hover::before{
     transform: scale(1.2);
     background-color: #fff; /* middle*/
-    box-shadow: 0 0 0 3px #cc2900;
+    box-shadow: 0 0 0 3px #CC3300;
     transition: 0.3s;
 
 }

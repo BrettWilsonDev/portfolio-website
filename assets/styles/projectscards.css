@@ -18,8 +18,8 @@
 }
 
 .card:hover {
-    box-shadow: 0 0 0 1.5px #cc2900;
-    border: 1px solid #cc2900;
+    box-shadow: 0 0 0 1.5px #CC3300;
+    border: 1px solid #CC3300;
     transition: .3s;
 }
 
@@ -132,7 +132,7 @@ article img {
 .outerCard:hover {
     color: #000;
     background-color: #fff;
-    border-color: #cc2900;
+    border-color: #CC3300;
 }
 
 /* @media only screen and (max-width: 394px) {

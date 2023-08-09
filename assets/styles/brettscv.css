@@ -25,7 +25,7 @@ a:hover {
 
 @keyframes spinborder {
     0%   {        
-        border-top: 15px solid #cc2900;
+        border-top: 15px solid #CC3300;
         border-right: 15px solid #003554;
         border-bottom: 15px solid #003554;
         border-left: 15px solid #003554;
@@ -33,7 +33,7 @@ a:hover {
     
     25%  {        
         border-top: 15px solid #003554;
-        border-right: 15px solid #cc2900;
+        border-right: 15px solid #CC3300;
         border-bottom: 15px solid #003554;
         border-left: 15px solid #003554;
     }
@@ -41,7 +41,7 @@ a:hover {
     50%  {    
         border-top: 15px solid #003554;
         border-right: 15px solid #003554;
-        border-bottom: 15px solid #cc2900;
+        border-bottom: 15px solid #CC3300;
         border-left: 15px solid #003554;
     }
     
@@ -49,10 +49,10 @@ a:hover {
         border-top: 15px solid #003554;
         border-right: 15px solid #003554;
         border-bottom: 15px solid #003554;
-        border-left: 15px solid #cc2900;
+        border-left: 15px solid #CC3300;
     }
     100% {
-        border-top: 15px solid #cc2900;
+        border-top: 15px solid #CC3300;
         border-right: 15px solid #003554;
         border-bottom: 15px solid #003554;
         border-left: 15px solid #003554;
