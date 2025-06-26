@@ -215,7 +215,6 @@
     <h1 id="Lcss" style="margin-top: 40px;">Games</h1>
 
     <div class="project-container">
-
         <!-- space-invaders-clone -->
         <div class="project-card">
             <img src="../assets/images/space-invaders-clone.webp" alt="space-invaders-clone image" />
@@ -241,7 +240,7 @@
             <img src="../assets/images/space-invaders-mk2.webp" alt="space-invaders-mk2 image" />
             <div>
                 <a href="https://www.bdw.run/space-invaders-mk2" target="_blank" rel="noopener">
-                    <h3>space-invaders-mk2</h3>
+                    <h3 padding-top:>space-invaders-mk2</h3>
                 </a>
                 <p>A Space Invaders-like game. A direct improvement on the previous project using <a
                         style="color: white; text-decoration: underline;" href="https://www.libsdl.org/" target="_blank"
@@ -257,69 +256,30 @@
             </div>
         </div>
 
-        <!-- place holder -->
-        <!-- <div class="project-card">
-            <img src="../assets/images/space-invaders-clone.webp" alt="space-invaders-clone image" />
+        <!-- fe2 -->
+        <div class="project-card">
+            <img src="../assets/images/fe2.webp" alt="fe2 image" />
             <div>
-                <a href="https://www.bdw.run/space-invaders-clone" target="_blank" rel="noopener">
-                    <h3>space-invaders-clone</h3>
+                <a href="https://brettwilsondev.github.io/glfrontier-extended" target="_blank" rel="noopener">
+                    <h3>GLFrontier-Extended</h3>
                 </a>
-                <p>A clone of space invaders in c++ using <a style="color: white; text-decoration: underline;"
-                        href="https://www.raylib.com/" target="_blank" rel="noopener">raylib</a></p>
+                <p>GLFrontier-Extended is a modified version of <a style="color: white; text-decoration: underline;"
+                        href="https://web.archive.org/web/20171014043201/http://tom.noflag.org.uk/glfrontier.html"
+                        target="_blank" rel="noopener">Tom Morton's Frontier Elite 2</a></p>
             </div>
             <div class="button-container">
-                <a href="https://www.bdw.run/space-invaders-clone" target="_blank" rel="noopener">
+                <a href="https://brettwilsondev.github.io/glfrontier-extended" target="_blank" rel="noopener">
                     <button>Play Game</button>
                 </a>
-                <a href="https://github.com/BrettWilsonDev/space-invaders-clone" target="_blank" rel="noopener">
+                <a href="https://github.com/BrettWilsonDev/glfrontier-extended" target="_blank" rel="noopener">
                     <button>GitHub Repo</button>
                 </a>
             </div>
-        </div> -->
+        </div>
 
 
-        <!-- <div class="project-card">
-            <img src="../assets/images/space-invaders-clone.webp" alt="space-invaders-clone image" />
-            <div>
-                <a href="https://www.bdw.run/space-invaders-clone" target="_blank" rel="noopener">
-                    <h3>space-invaders-clone</h3>
-                </a>
-                <p>A clone of space invaders in c++ using <a style="color: white; text-decoration: underline;"
-                        href="https://www.raylib.com/" target="_blank" rel="noopener">raylib</a></p>
-            </div>
-            <div class="button-container">
-                <a href="https://www.bdw.run/space-invaders-clone" target="_blank" rel="noopener">
-                    <button>Play Game</button>
-                </a>
-                <a href="https://github.com/BrettWilsonDev/space-invaders-clone" target="_blank" rel="noopener">
-                    <button>GitHub Repo</button>
-                </a>
-            </div>
-        </div> -->
-
-
-        <!-- <div class="project-card">
-            <img src="../assets/images/space-invaders-clone.webp" alt="space-invaders-clone image" />
-            <div>
-                <a href="https://www.bdw.run/space-invaders-clone" target="_blank" rel="noopener">
-                    <h3>space-invaders-clone</h3>
-                </a>
-                <p>A clone of space invaders in c++ using <a style="color: white; text-decoration: underline;"
-                        href="https://www.raylib.com/" target="_blank" rel="noopener">raylib</a></p>
-            </div>
-            <div class="button-container">
-                <a href="https://www.bdw.run/space-invaders-clone" target="_blank" rel="noopener">
-                    <button>Play Game</button>
-                </a>
-                <a href="https://github.com/BrettWilsonDev/space-invaders-clone" target="_blank" rel="noopener">
-                    <button>GitHub Repo</button>
-                </a>
-            </div>
-        </div> -->
-
-
-        <!-- ending div of section -->
     </div>
+
 
     <footer style="text-align: center; height: 50px; color: #fff;">
         <div style="margin-top: 20px; height: 50px;">
@@ -331,5 +291,27 @@
         </div>
     </footer>
 </body>
+
+<script>
+    window.addEventListener('load', () => {
+        const cards = document.querySelectorAll('.project-card');
+        let maxImageHeight = 0;
+
+        cards.forEach(card => {
+            const img = card.querySelector('img');
+            if (img && img.height > maxImageHeight) {
+                maxImageHeight = img.height;
+            }
+        });
+
+        cards.forEach(card => {
+            const img = card.querySelector('img');
+            if (img) {
+                const diff = maxImageHeight - img.height;
+                img.style.marginBottom = `${diff}px`;
+            }
+        });
+    });
+</script>
 
 </html>
