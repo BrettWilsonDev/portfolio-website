@@ -88,6 +88,8 @@ a {
     height: fit-content;
     position: sticky;
     top: 20px;
+
+    /* outline: 1px solid #CC3300; */
 }
 
 .right-column {
@@ -95,6 +97,8 @@ a {
     backdrop-filter: blur(10px);
     border-radius: 15px;
     padding: 30px;
+
+    /* outline: 1px solid #CC3300; */
 }
 
 .profile-photo {
@@ -166,7 +170,9 @@ a {
 
 .contact-list li:hover {
     background: rgba(255, 255, 255, 0.2);
-    transform: translateX(5px);
+    /* transform: translateX(5px); */
+    /* border: 1px solid #CC3300; */
+    outline: 3px solid #CC3300;
 }
 
 .contact-list a {
@@ -196,6 +202,7 @@ a {
 .skills-list li:hover {
     background: rgba(255, 255, 255, 0.25);
     transform: scale(1.05);
+    outline: 2px solid #CC3300;
 }
 
 .experience-item,
@@ -224,6 +231,7 @@ a {
     background: rgba(255, 255, 255, 0.15);
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    outline: 1px solid #CC3300;
 }
 
 .item-header {
@@ -293,9 +301,11 @@ a {
 }
 
 .certification-item:hover {
-    background: rgba(255, 255, 255, 0.15);
+    /* background: rgba(255, 255, 255, 0.15); */
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    outline: 2px solid #CC3300;
+    border: none;
 }
 
 .certification-item a {
@@ -323,8 +333,7 @@ a {
 
         /* Center this block */
         width: 90%;
-        /* max-width: 500px; */
-        max-width: 80%;
+        max-width: 800px;
     }
 
     .right-column {
@@ -352,5 +361,13 @@ a {
     .item-header {
         flex-direction: column;
         gap: 10px;
+    }
+
+    .skills-list {
+        display: none;
+    }
+
+    .skills-list-title {
+        display: none;
     }
 }
