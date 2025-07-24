@@ -315,6 +315,23 @@ a {
     font-size: 1.1rem;
 }
 
+.module-item {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    /* transition: all 0.3s ease; */
+    /* border: 1px solid rgba(255, 255, 255, 0.2); */
+    outline: 1px solid rgba(255, 255, 255, 0.2);;
+}
+
+.module-item:hover {
+    /* transform: translateY(-3px); */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    outline: 1px solid #CC3300;
+    border: none;
+}
+
 @media (max-width: 1168px) {
     .cv-layout {
         grid-template-columns: 1fr;
