@@ -165,7 +165,7 @@ a {
     padding: 10px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    transition: all 0.3s ease;
+    /* transition: all 0.3s ease; */
 }
 
 .contact-list li:hover {
@@ -195,7 +195,7 @@ a {
     text-align: center;
     color: #fff;
     font-weight: 500;
-    transition: all 0.3s ease;
+    /* transition: all 0.3s ease; */
     /* border-left: 4px solid rgba(255, 255, 255, 0.4); */
 }
 
@@ -213,7 +213,7 @@ a {
     padding: 25px;
     margin-bottom: 25px;
     /* border-left: 5px solid rgba(255, 255, 255, 0.4); */
-    transition: all 0.3s ease;
+    /* transition: all 0.3s ease; */
 }
 
 .top-title-item {
@@ -222,14 +222,14 @@ a {
     padding: 25px;
     margin-bottom: 25px;
     /* border-left: 5px solid rgba(255, 255, 255, 0.4); */
-    transition: all 0.3s ease;
+    /* transition: all 0.3s ease; */
 }
 
 .experience-item:hover,
 .education-item:hover,
 .cert-item:hover {
     background: rgba(255, 255, 255, 0.15);
-    transform: translateY(-3px);
+    /* transform: translateY(-3px); */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     outline: 1px solid #CC3300;
 }
@@ -296,13 +296,13 @@ a {
     border-radius: 12px;
     padding: 20px;
     text-align: center;
-    transition: all 0.3s ease;
+    /* transition: all 0.3s ease; */
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .certification-item:hover {
     /* background: rgba(255, 255, 255, 0.15); */
-    transform: translateY(-3px);
+    /* transform: translateY(-3px); */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     outline: 2px solid #CC3300;
     border: none;
