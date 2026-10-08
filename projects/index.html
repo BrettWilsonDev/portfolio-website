@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="Brett David Wilson's projects: personal and professional.">
     <meta name="keywords"
-        content="brett wilson, brett wilson projects , Brett david Wilson, bdw.run, www.bdw.run, bdw, brett wilson dev, brett wilson dev home page, www.brettwilsondev.com, brettwilsondev.com, Brett Wilson, Brett Wilson , Brett Wilson website, Brett David Wilson , brettwilsondev, brettwilsondev projects, BrettWilson projects, Brett david Wilson projects, brettwilsondev website">
+        content="brett wilson, brett wilson projects, Brett david Wilson, bdw.run, www.bdw.run, bdw, brett wilson dev, www.brettwilsondev.com, brettwilsondev.com, brettwilsondev projects, BrettWilson projects, SDL3, raylib, OpenGL, WebAssembly">
+    <meta name="theme-color" content="#000000">
     <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
     <link rel="stylesheet" href="../assets/styles/main.min.css">
     <link rel="stylesheet" href="../assets/styles/project.min.css">
@@ -15,302 +15,169 @@
     <title>Brett David Wilson's Projects</title>
 </head>
 
-<header>
-    <nav>
-        <div>
-            <span id="webName">Brett David Wilson</span>
-            <ul id="tabs">
-                Contact Me <a href="https://github.com/BrettWilsonDev" class="socialIcon" aria-label="GitHub"
-                    target="_blank"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                        viewBox="0 0 496 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"
-                        style="--darkreader-inline-stroke: currentColor; --darkreader-inline-fill: currentColor;"
-                        data-darkreader-inline-stroke="" data-darkreader-inline-fill="">
-                        <path
-                            d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
-                        </path>
-                    </svg></a>
-                <a href="https://www.linkedin.com/in/brettwilsonbdw/" class="socialIcon" aria-label="Linkedin"
-                    target="_blank"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                        viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"
-                        style="--darkreader-inline-stroke: currentColor; --darkreader-inline-fill: currentColor;"
-                        data-darkreader-inline-stroke="" data-darkreader-inline-fill="">
-                        <path
-                            d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z">
-                        </path>
-                    </svg></a>
-                <a style="padding-right: 1rem;" href="mailto:brett.david.wilson.message@outlook.com" class="socialIcon"
-                    aria-label="Email" target="_blank"><svg xmlns="http://www.w3.org/2000/svg" height="1em" width="1em"
-                        fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
-                        <path
-                            d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
-                    </svg></a>
-                <li class="aTabs" onclick="location.href='../';" style="cursor: pointer;"><span
-                        class="tabName">Home</span>
-                </li>
-                <li class="aTabs" onclick="location.href='../projects/';" style="cursor: pointer;"><span
-                        class="tabName">Projects</span>
-                </li>
-                <li class="aTabs" onclick="location.href='../timeline/';" style="cursor: pointer;"><span
-                        class="tabName">Timeline</span>
-                </li>
-                <li class="aTabs" onclick="location.href='../BrettsCV/';" style="cursor: pointer;"><span
-                        class="tabName">CV</span>
-                </li>
-            </ul>
-            <span id="burgerMneuToggle">
-                <input type="checkbox" aria-label="Menu" />
-                <span></span>
-                <span></span>
-                <span></span>
-                <ul id="burgerMneu">
-                    <li><a href="../" aria-label="Home page tab">Home</a></li>
-                    <li><a href="../projects/" aria-label="Projects tab">Projects</a></li>
-                    <li><a href="../timeline/" aria-label="Timeline tab">Timeline</a></li>
-                    <li><a href="../BrettsCV/" aria-label="CV tab">CV</a></li>
-                    <li><br><br></li>
-                    <li class="burgerIcons"> Contact Me <a href="https://github.com/BrettWilsonDev" class="socialIcon"
-                            aria-label="GitHub" target="_blank"><svg stroke="currentColor" fill="currentColor"
-                                stroke-width="0" viewBox="0 0 496 512" height="1em" width="1em"
-                                xmlns="http://www.w3.org/2000/svg"
-                                style="--darkreader-inline-stroke: currentColor; --darkreader-inline-fill: currentColor;"
-                                data-darkreader-inline-stroke="" data-darkreader-inline-fill="">
-                                <path
-                                    d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
-                                </path>
-                            </svg></a>
-                        <a href="https://www.linkedin.com/in/brettwilsonbdw/" class="socialIcon" aria-label="Linkedin"
-                            target="_blank"><svg stroke="currentColor" fill="currentColor" stroke-width="0"
-                                viewBox="0 0 448 512" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"
-                                style="--darkreader-inline-stroke: currentColor; --darkreader-inline-fill: currentColor;"
-                                data-darkreader-inline-stroke="" data-darkreader-inline-fill="">
-                                <path
-                                    d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z">
-                                </path>
-                            </svg></a>
-                        <a style="padding-right: 1rem;" href="mailto:brett.david.wilson.message@outlook.com"
-                            class="socialIcon" aria-label="Email" target="_blank"><svg
-                                xmlns="http://www.w3.org/2000/svg" height="1em" width="1em" fill="currentColor"
-                                class="bi bi-envelope-fill" viewBox="0 0 16 16">
-                                <path
-                                    d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
-                            </svg></a>
-                    </li>
+<body data-base="../">
+    <!-- nav:start -->
+    <header class="site-header">
+        <nav class="nav" aria-label="Main">
+            <a class="brand" href="../"><img class="brand-logo" src="../assets/images/favicon.ico" alt="" width="30" height="30"><span class="brand-name">Brett David Wilson</span></a>
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-tabs">
+                    <li><a class="aTabs" href="../">Home</a></li>
+                    <li><a class="aTabs" href="../projects/" aria-current="page">Projects</a></li>
+                    <li><a class="aTabs" href="../BrettsCV/">CV</a></li>
                 </ul>
-            </span>
-        </div>
-    </nav>
-</header>
+                <div class="nav-social">
+                    <a href="https://github.com/BrettWilsonDev" class="socialIcon" aria-label="GitHub" target="_blank" rel="noopener"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 496 512" height="1.1em" width="1.1em" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8z"></path></svg></a>
+                    <a href="https://www.linkedin.com/in/brettwilsonbdw/" class="socialIcon" aria-label="LinkedIn" target="_blank" rel="noopener"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 448 512" height="1.1em" width="1.1em" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg></a>
+                    <a href="mailto:brett.david.wilson.message@outlook.com" class="socialIcon" aria-label="Email"><svg xmlns="http://www.w3.org/2000/svg" height="1.1em" width="1.1em" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true"><path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z"/></svg></a>
+                </div>
+            </div>
+            <button type="button" class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navMenu"><span></span><span></span><span></span></button>
+        </nav>
+    </header>
+    <!-- nav:end -->
 
-<body style="display: flex; flex-direction: column; max-height: 100%;">
-    <div style="flex-grow: 1;">
-        <canvas id="canvas"></canvas>
+    <div class="ambient" aria-hidden="true"><span></span><span></span></div>
 
-        <h1 id="Lcss">Brett David Wilson's projects: personal and professional.</h1>
 
-        <main>
+    <main class="page">
+        <header class="page-head">
+            <h1 class="heading">Projects</h1>
+            <p class="lede">My projects, personal and professional: tools and games I've built along the way.</p>
 
-            <h1 id="Lcss" style="margin-top: 40px;">Tools</h1>
+            <div class="filters" role="group" aria-label="Filter projects">
+                <button type="button" class="filter" data-filter="all" aria-pressed="true">all</button>
+                <button type="button" class="filter" data-filter="tools" aria-pressed="false">tools</button>
+                <button type="button" class="filter" data-filter="engine" aria-pressed="false">games</button>
+            </div>
+        </header>
 
+        <!-- tools -->
+        <section class="group" data-group="tools">
+            <h2 class="group-title">Tools</h2>
             <div class="project-container">
 
-                <!-- lpr-solver-tool -->
-                <div class="project-card">
-                    <img src="../assets/images/lpr-cpp.webp" alt="lpr-solver-tool image" />
-                    <div>
-                        <a href="https://brettwilsondev.github.io/linprog-toolset" target="_blank" rel="noopener">
-                            <h3>LPR Solver Toolset</h3>
-                        </a>
-                        <p>Linear Programming Complete Tool Set made in c++(wasm) feature Complete</p>
+                <article class="project-card">
+                    <img src="../assets/images/lpr-cpp.webp" alt="LPR Solver Toolset screenshot" loading="lazy">
+                    <div class="card-body">
+                        <span class="card-meta mono">C++ · WASM</span>
+                        <h3><a href="https://brettwilsondev.github.io/linprog-toolset" target="_blank" rel="noopener">LPR Solver Toolset</a></h3>
+                        <p>Linear programming complete toolset made in C++ (WASM). Feature complete.</p>
                     </div>
                     <div class="button-container">
-                        <a href="https://brettwilsondev.github.io/linprog-toolset" target="_blank" rel="noopener">
-                            <button>Visit Website</button>
-                        </a>
-                        <a href="https://github.com/BrettWilsonDev/linprog-toolset" target="_blank" rel="noopener">
-                            <button>GitHub Repo</button>
-                        </a>
+                        <a class="btn" href="https://brettwilsondev.github.io/linprog-toolset" target="_blank" rel="noopener">Visit Website</a>
+                        <a class="btn btn-ghost" href="https://github.com/BrettWilsonDev/linprog-toolset" target="_blank" rel="noopener">GitHub Repo</a>
                     </div>
-                </div>
+                </article>
 
-                <!-- lpr-solver-tool -->
-                <div class="project-card">
-                    <img src="../assets/images/lprTool.webp" alt="lpr-solver-tool image" />
-                    <div>
-                        <a href="https://brettwilsondev.github.io/LP-Prototype-Py-Apps/" target="_blank" rel="noopener">
-                            <h3>lpr-solver-tool</h3>
-                        </a>
-                        <p>Linear Programming Simplex Solver that displays each step and tableau made with python</p>
+                <article class="project-card">
+                    <img src="../assets/images/lprTool.webp" alt="lpr-solver-tool screenshot" loading="lazy">
+                    <div class="card-body">
+                        <span class="card-meta mono">Python</span>
+                        <h3><a href="https://brettwilsondev.github.io/LP-Prototype-Py-Apps/" target="_blank" rel="noopener">lpr-solver-tool</a></h3>
+                        <p>Linear programming simplex solver that displays each step and tableau, made with Python.</p>
                     </div>
                     <div class="button-container">
-                        <a href="https://brettwilsondev.github.io/LP-Prototype-Py-Apps/" target="_blank" rel="noopener">
-                            <button>Visit Website</button>
-                        </a>
-                        <a href="https://github.com/BrettWilsonDev/LP-Prototype-Py-Apps" target="_blank" rel="noopener">
-                            <button>GitHub Repo</button>
-                        </a>
+                        <a class="btn" href="https://brettwilsondev.github.io/LP-Prototype-Py-Apps/" target="_blank" rel="noopener">Visit Website</a>
+                        <a class="btn btn-ghost" href="https://github.com/BrettWilsonDev/LP-Prototype-Py-Apps" target="_blank" rel="noopener">GitHub Repo</a>
                     </div>
-                </div>
+                </article>
 
-                <!-- paint-tracker -->
-                <div class="project-card">
-                    <img src="../assets/images/paint-tracker.webp" alt="paint-tracker image" />
-                    <div>
-                        <a href="https://www.bdw.run/scale-model-paint-tracker/" target="_blank" rel="noopener">
-                            <h3>paint-tracker</h3>
-                        </a>
-                        <p>Scale modeling paint tracking tool</p>
+                <article class="project-card">
+                    <img src="../assets/images/paint-tracker.webp" alt="paint-tracker screenshot" loading="lazy">
+                    <div class="card-body">
+                        <span class="card-meta mono">JavaScript</span>
+                        <h3><a href="https://www.bdw.run/scale-model-paint-tracker/" target="_blank" rel="noopener">paint-tracker</a></h3>
+                        <p>Scale modelling paint tracking tool.</p>
                     </div>
                     <div class="button-container">
-                        <a href="https://www.bdw.run/scale-model-paint-tracker/" target="_blank" rel="noopener">
-                            <button>Visit Website</button>
-                        </a>
-                        <a href="https://github.com/BrettWilsonDev/scale-model-paint-tracker" target="_blank"
-                            rel="noopener">
-                            <button>GitHub Repo</button>
-                        </a>
+                        <a class="btn" href="https://www.bdw.run/scale-model-paint-tracker/" target="_blank" rel="noopener">Visit Website</a>
+                        <a class="btn btn-ghost" href="https://github.com/BrettWilsonDev/scale-model-paint-tracker" target="_blank" rel="noopener">GitHub Repo</a>
                     </div>
-                </div>
+                </article>
 
-                <!-- calc-py -->
-                <!-- <div class="project-card">
-                    <img src="../assets/images/calc_py.webp" alt="calc_py image" />
-                    <div>
-                        <a href="https://www.bdw.run/calc-py/" target="_blank" rel="noopener">
-                            <h3>calc-py</h3>
-                        </a>
-                        <p>Simple web calculator made in python using pyscript.</p>
+                <article class="project-card">
+                    <img src="../assets/images/pokedexv2.webp" alt="pokedexv2 screenshot" loading="lazy">
+                    <div class="card-body">
+                        <span class="card-meta mono">JavaScript · PokéAPI</span>
+                        <h3><a href="https://www.bdw.run/pokedexv2/" target="_blank" rel="noopener">pokedexv2</a></h3>
+                        <p>Working Pokédex made by me as a fun web project using the PokéAPI.</p>
                     </div>
                     <div class="button-container">
-                        <a href="https://www.bdw.run/calc-py/" target="_blank" rel="noopener">
-                            <button>Visit Website</button>
-                        </a>
-                        <a href="https://github.com/BrettWilsonDev/calc-py" target="_blank" rel="noopener">
-                            <button>GitHub Repo</button>
-                        </a>
+                        <a class="btn" href="https://www.bdw.run/pokedexv2/" target="_blank" rel="noopener">Visit Website</a>
+                        <a class="btn btn-ghost" href="https://github.com/BrettWilsonDev/pokedexv2" target="_blank" rel="noopener">GitHub Repo</a>
                     </div>
-                </div> -->
+                </article>
+            </div>
+        </section>
 
-                <!-- pokedexv2 -->
-                <div class="project-card">
-                    <img src="../assets/images/pokedexv2.webp" alt="pokedexv2 image" />
-                    <div>
-                        <a href="https://www.bdw.run/pokedexv2/" target="_blank" rel="noopener">
-                            <h3>pokedexv2</h3>
-                        </a>
-                        <p>Working pokedex made by me as a fun web project using the pokiapi.</p>
+        <!-- games & engines -->
+        <section class="group" data-group="engine">
+            <h2 class="group-title">Games</h2>
+            <div class="project-container">
+
+                <article class="project-card">
+                    <img src="../assets/images/fe2.webp" alt="GLFrontier-Extended screenshot" loading="lazy">
+                    <div class="card-body">
+                        <span class="card-meta mono">C/C++ · OpenGL · Web</span>
+                        <h3><a href="https://brettwilsondev.github.io/glfrontier-extended" target="_blank" rel="noopener">GLFrontier-Extended</a></h3>
+                        <p>GLFrontier-Extended is a modified version of <a href="https://web.archive.org/web/20171014043201/http://tom.noflag.org.uk/glfrontier.html" target="_blank" rel="noopener">Tom Morton's Frontier Elite 2</a>.</p>
                     </div>
                     <div class="button-container">
-                        <a href="https://www.bdw.run/pokedexv2/" target="_blank" rel="noopener">
-                            <button>Visit Website</button>
-                        </a>
-                        <a href="https://github.com/BrettWilsonDev/pokedexv2" target="_blank" rel="noopener">
-                            <button>GitHub Repo</button>
-                        </a>
+                        <a class="btn" href="https://brettwilsondev.github.io/glfrontier-extended" target="_blank" rel="noopener">Play Game</a>
+                        <a class="btn btn-ghost" href="https://github.com/BrettWilsonDev/glfrontier-extended" target="_blank" rel="noopener">GitHub Repo</a>
                     </div>
-                </div>
-            </div>
-        </main>
+                </article>
 
-    </div>
+                <article class="project-card">
+                    <img src="../assets/images/space-invaders-mk2.webp" alt="space-invaders-mk2 screenshot" loading="lazy">
+                    <div class="card-body">
+                        <span class="card-meta mono">C++ · SDL3</span>
+                        <h3><a href="https://www.bdw.run/space-invaders-mk2" target="_blank" rel="noopener">space-invaders-mk2</a></h3>
+                        <p>A Space Invaders-like game. A direct improvement on the previous project using <a href="https://www.libsdl.org/" target="_blank" rel="noopener">SDL3</a>.</p>
+                    </div>
+                    <div class="button-container">
+                        <a class="btn" href="https://www.bdw.run/space-invaders-mk2" target="_blank" rel="noopener">Play Game</a>
+                        <a class="btn btn-ghost" href="https://github.com/BrettWilsonDev/space-invaders-mk2" target="_blank" rel="noopener">GitHub Repo</a>
+                    </div>
+                </article>
 
-    <h1 id="Lcss" style="margin-top: 40px;">Games</h1>
+                <article class="project-card">
+                    <img src="../assets/images/space-invaders-clone.webp" alt="space-invaders-clone screenshot" loading="lazy">
+                    <div class="card-body">
+                        <span class="card-meta mono">C++ · raylib</span>
+                        <h3><a href="https://www.bdw.run/space-invaders-clone" target="_blank" rel="noopener">space-invaders-clone</a></h3>
+                        <p>A clone of Space Invaders in C++ using <a href="https://www.raylib.com/" target="_blank" rel="noopener">raylib</a>.</p>
+                    </div>
+                    <div class="button-container">
+                        <a class="btn" href="https://www.bdw.run/space-invaders-clone" target="_blank" rel="noopener">Play Game</a>
+                        <a class="btn btn-ghost" href="https://github.com/BrettWilsonDev/space-invaders-clone" target="_blank" rel="noopener">GitHub Repo</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
 
-    <div class="project-container">
-        <!-- fe2 -->
-        <div class="project-card">
-            <img src="../assets/images/fe2.webp" alt="fe2 image" />
-            <div>
-                <a href="https://brettwilsondev.github.io/glfrontier-extended" target="_blank" rel="noopener">
-                    <h3>GLFrontier-Extended</h3>
-                </a>
-                <p>GLFrontier-Extended is a modified version of <a style="color: white; text-decoration: underline;"
-                        href="https://web.archive.org/web/20171014043201/http://tom.noflag.org.uk/glfrontier.html"
-                        target="_blank" rel="noopener">Tom Morton's Frontier Elite 2</a></p>
-            </div>
-            <div class="button-container">
-                <a href="https://brettwilsondev.github.io/glfrontier-extended" target="_blank" rel="noopener">
-                    <button>Play Game</button>
-                </a>
-                <a href="https://github.com/BrettWilsonDev/glfrontier-extended" target="_blank" rel="noopener">
-                    <button>GitHub Repo</button>
-                </a>
-            </div>
-        </div>
-
-        <!-- space-invaders-clone -->
-        <div class="project-card">
-            <img src="../assets/images/space-invaders-clone.webp" alt="space-invaders-clone image" />
-            <div>
-                <a href="https://www.bdw.run/space-invaders-clone" target="_blank" rel="noopener">
-                    <h3>space-invaders-clone</h3>
-                </a>
-                <p>A clone of space invaders in c++ using <a style="color: white; text-decoration: underline;"
-                        href="https://www.raylib.com/" target="_blank" rel="noopener">raylib</a></p>
-            </div>
-            <div class="button-container">
-                <a href="https://www.bdw.run/space-invaders-clone" target="_blank" rel="noopener">
-                    <button>Play Game</button>
-                </a>
-                <a href="https://github.com/BrettWilsonDev/space-invaders-clone" target="_blank" rel="noopener">
-                    <button>GitHub Repo</button>
-                </a>
-            </div>
-        </div>
-
-        <!-- space-invaders-mk2 -->
-        <div class="project-card">
-            <img src="../assets/images/space-invaders-mk2.webp" alt="space-invaders-mk2 image" />
-            <div>
-                <a href="https://www.bdw.run/space-invaders-mk2" target="_blank" rel="noopener">
-                    <h3 padding-top:>space-invaders-mk2</h3>
-                </a>
-                <p>A Space Invaders-like game. A direct improvement on the previous project using <a
-                        style="color: white; text-decoration: underline;" href="https://www.libsdl.org/" target="_blank"
-                        rel="noopener">SDL3</a></p>
-            </div>
-            <div class="button-container">
-                <a href="https://www.bdw.run/space-invaders-mk2" target="_blank" rel="noopener">
-                    <button>Play Game</button>
-                </a>
-                <a href="https://github.com/BrettWilsonDev/space-invaders-mk2" target="_blank" rel="noopener">
-                    <button>GitHub Repo</button>
-                </a>
-            </div>
-        </div>
-    </div>
-
-
-    <footer style="text-align: center; height: 50px; color: #fff;">
-        <div style="margin-top: 20px; height: 50px;">
-            &copy;
-            <span id="footerC">
-                <script>document.getElementById('footerC').appendChild(document.createTextNode(new Date().getFullYear()))</script>
-            </span>
-            | Made by Brett Wilson
-        </div>
+    <footer class="site-footer">
+        &copy; <span data-year>2026</span> | Made by Brett Wilson
     </footer>
+
+    <script>
+        // project filter
+        (() => {
+            const buttons = document.querySelectorAll('.filter');
+            const groups = document.querySelectorAll('.group');
+            buttons.forEach((btn) => {
+                btn.addEventListener('click', () => {
+                    const f = btn.dataset.filter;
+                    buttons.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+                    groups.forEach((g) => {
+                        g.hidden = f !== 'all' && g.dataset.group !== f;
+                    });
+                });
+            });
+        })();
+    </script>
 </body>
-
-<script>
-    window.addEventListener('load', () => {
-        const cards = document.querySelectorAll('.project-card');
-        let maxImageHeight = 0;
-
-        cards.forEach(card => {
-            const img = card.querySelector('img');
-            if (img && img.height > maxImageHeight) {
-                maxImageHeight = img.height;
-            }
-        });
-
-        cards.forEach(card => {
-            const img = card.querySelector('img');
-            if (img) {
-                const diff = maxImageHeight - img.height;
-                img.style.marginBottom = `${diff}px`;
-            }
-        });
-    });
-</script>
 
 </html>

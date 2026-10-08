@@ -1,78 +1,146 @@
-.project-container {
+/* projects page */
+
+.page-head {
+    margin-bottom: 1rem;
+}
+
+.filters {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  .project-card {
+    gap: 0.5rem;
+    margin-top: 1.75rem;
+}
+
+.filter {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    padding: 6px 14px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.45);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.filter:hover {
+    border-color: var(--accent-hi);
+}
+
+.filter[aria-pressed="true"] {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.group {
+    margin-top: 3.5rem;
+}
+
+.group-title {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--line);
+}
+
+.group-title .mono {
+    font-size: 0.85rem;
+    color: var(--accent-hi);
+}
+
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1.25rem;
+}
+
+.project-card {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 350px;
-    height: 500px;
-    margin: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    text-align: center;
-  }
-  
-  .project-card a {
-    text-decoration: none;
-    color: black;
-  }
-  
-  .project-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    height: 50px;
-    flex-shrink: 0;
-    color: #fff;
-  }
-  
-  .project-card p {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin-bottom: 10px;
-    flex-grow: 1;
-  }
-  
-  .project-card img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-  }
-  
-  .project-card button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    color: #fff;
-    background-color: #000;
-    cursor: pointer;
-    transition: background-color 0.2s ease-in-out;
-  }
-  
-  .project-card button:hover {
-    background-color: #CC3300;
-  }
-  
-  .project-card .button-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-  }
-  
-  .project-card {
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
     background: linear-gradient(to bottom, #7a0236, #2b015b);
-  }
-  
-  
-  @media only screen and (max-width: 415px) {
-    .project-card {
-      width: 280px;
-    }
-  }
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 14px 40px rgba(204, 51, 0, 0.25);
+}
+
+.project-card img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-bottom: 1px solid var(--line);
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+    padding: 1.1rem 1.25rem 0.5rem;
+}
+
+.card-meta {
+    font-size: 0.75rem;
+    color: var(--accent-hi);
+}
+
+.project-card h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.project-card h3 a {
+    text-decoration: none;
+}
+
+.project-card h3 a:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--accent-hi);
+    text-underline-offset: 4px;
+}
+
+.project-card p {
+    color: var(--ink-dim);
+    font-weight: 300;
+    line-height: 1.6;
+}
+
+.project-card p a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.button-container {
+    display: flex;
+    gap: 0.6rem;
+    padding: 1rem 1.25rem 1.25rem;
+}
+
+.button-container .btn {
+    flex: 1;
+    justify-content: center;
+    padding: 8px 10px;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.project-card.wip {
+    background: rgba(0, 0, 0, 0.4);
+    border-style: dashed;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.project-card.wip .card-body {
+    padding-top: 1.5rem;
+}
