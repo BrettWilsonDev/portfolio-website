@@ -2900,6 +2900,20 @@
     r.canvas.width = Math.floor(r.w * dpr);
     r.canvas.height = Math.floor(r.h * dpr);
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    measureSlot();
+  }
+
+  // narrow home page: the free space between the hero text and the end of the
+  // first screen, so the scene is not hidden behind the text or the next section
+  function measureSlot() {
+    const r = renderer;
+    r.slot = null;
+    const hero = document.querySelector(".hero");
+    const copy = document.querySelector(".hero-copy");
+    if (!hero || !copy) return;
+    const top = copy.getBoundingClientRect().bottom + window.scrollY;
+    const bottom = Math.min(hero.getBoundingClientRect().bottom + window.scrollY, r.h);
+    if (bottom - top >= 140) r.slot = [top, bottom];
   }
 
   // jump to a scene (from the arrow buttons); it fades in and gets a full turn
@@ -2952,9 +2966,20 @@
 
     // on the home page the scene sits in the empty right half of the hero
     const wide = r.w > 1000 && r.home;
+    const slot = !wide && r.home ? r.slot : null; // narrow home: below the hero text
     const cx = wide ? r.w * 0.73 : r.w * 0.5;
-    const cy = r.h * (wide ? 0.52 : r.home ? 0.8 : 0.5); // narrow home: below the hero text
-    const f = Math.min(r.w * (wide ? 0.42 : 0.7), r.h * 1.05);
+    const cy = slot ? (slot[0] + slot[1]) / 2 - 8 : r.h * (wide ? 0.52 : r.home ? 0.8 : 0.5);
+    const f = slot
+      ? Math.min(r.w * 0.8, (slot[1] - slot[0]) * 0.88)
+      : Math.min(r.w * (wide ? 0.42 : 0.7), r.h * 1.05);
+
+    // remember where the scene sits so the scroll fade and dot grid can follow it
+    if (cx !== r.cx || cy !== r.cy || f !== r.f) {
+      r.cx = cx;
+      r.cy = cy;
+      r.f = f;
+      if (r.fade) r.fade();
+    }
 
     P = (x, y, z) => {
       const x1 = x * cY - z * sY;
@@ -2971,7 +2996,7 @@
     ctx.globalAlpha = 1;
 
     // name under the scene: arrow controls on the wide home page, plain text elsewhere
-    const navOn = r.nav && wide && window.scrollY < r.h * 0.5;
+    const navOn = r.nav && wide && r.shown > 0.5;
     if (r.nav) {
       r.nav.hidden = !navOn;
       if (navOn) {
@@ -3000,17 +3025,37 @@
     r.home = !!document.querySelector(".hero");
     r.time = FADE_SECONDS; // first scene starts fully visible
     SCENES[r.index].init();
+    r.dots = document.querySelector(".ambient-home");
     if (r.home) buildSceneNav();
     resize();
     window.addEventListener("resize", resize);
+    window.addEventListener("load", measureSlot); // text height settles once fonts are in
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(measureSlot);
 
     // keep the scene in the background: full strength behind the home hero,
     // fading out as you scroll into content (and dimmer on content pages)
     const base = r.home ? 1 : 0.55;
+    const after = r.home ? document.querySelector(".hero").nextElementSibling : null;
     const fade = () => {
-      const k = Math.min(1, window.scrollY / window.innerHeight);
-      r.canvas.style.opacity = (base * (1 - 0.65 * k)).toFixed(3);
+      if (!after || r.f === undefined) {
+        const k = Math.min(1, window.scrollY / window.innerHeight);
+        r.shown = 1 - 0.65 * k;
+      } else {
+        // home page: fade right out as the next section slides over the scene
+        const edge = after.getBoundingClientRect().top;
+        r.shown = Math.max(0, Math.min(1, (edge - (r.cy - r.f * 0.05)) / (r.f * 0.5)));
+      }
+      r.canvas.style.opacity = (base * r.shown).toFixed(3);
+      // keep the dot grid clear of the scene, closing the gap as the scene fades
+      if (r.dots && r.f !== undefined) {
+        r.dots.style.setProperty("--scene-x", r.cx + "px");
+        r.dots.style.setProperty("--scene-y", r.cy + "px");
+        r.dots.style.setProperty("--scene-r0", r.f * 0.42 * r.shown + "px");
+        r.dots.style.setProperty("--scene-r1", r.f * 0.8 * r.shown + "px");
+      }
     };
+    r.fade = fade;
+    r.shown = 1;
     fade();
     window.addEventListener("scroll", fade, { passive: true });
 

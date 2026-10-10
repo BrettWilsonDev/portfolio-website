@@ -487,6 +487,17 @@ kbd {
     animation: ambient-drift-b 75s ease-in-out infinite alternate;
 }
 
+/* home page: dots only, faded out around the background diagram (position set from main.js) */
+
+.ambient-home {
+    --mask-edge: radial-gradient(ellipse at 50% 40%, #000 30%, transparent 85%);
+    --mask-hole: radial-gradient(circle at var(--scene-x, 50%) var(--scene-y, 50%), transparent var(--scene-r0, 0px), #000 var(--scene-r1, 0px));
+    -webkit-mask-image: var(--mask-hole), var(--mask-edge);
+    mask-image: var(--mask-hole), var(--mask-edge);
+    -webkit-mask-composite: source-in;
+    mask-composite: intersect;
+}
+
 @keyframes ambient-pan {
     to { background-position: 220px 110px; }
 }

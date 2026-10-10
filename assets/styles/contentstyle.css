@@ -159,8 +159,10 @@
 @media only screen and (max-width: 1000px) {
     .hero {
         grid-template-columns: 1fr;
-        min-height: 0;
-        padding-block: 1rem;
+        align-items: start;
+        min-height: calc(100vh - var(--nav-h) - 5rem);
+        min-height: calc(100svh - var(--nav-h) - 5rem);
+        padding-block: 1rem min(75vw, 320px); /* room under the text for the background diagram */
     }
 
 
