@@ -16,6 +16,9 @@
   const MAX_DPR = lowPower ? 1.5 : 2;
   const FRAME_MS = lowPower ? 1000 / 30 : 0;
 
+  // single column home page: the canvas scrolls with the page (keep in sync with main.css)
+  const narrow = window.matchMedia("(max-width: 1000px)");
+
   /* ------------------------------------------------------------------------
      Drawing helpers shared by every scene. These run thousands of times per
      frame, so they avoid allocating: `project` writes its result to px / py
@@ -3108,6 +3111,9 @@
       if (!after || r.f === undefined) {
         const k = Math.min(1, window.scrollY / window.innerHeight);
         r.shown = 1 - 0.65 * k;
+      } else if (narrow.matches) {
+        // the scene scrolls away with the page: on until it is out of view
+        r.shown = window.scrollY < r.cy + r.f * 0.5 + 24 ? 1 : 0;
       } else {
         // home page: fade right out as the next section slides over the scene
         const edge = after.getBoundingClientRect().top;
@@ -3119,16 +3125,16 @@
         r.canvas.style.opacity = opacity;
       }
       // keep the dot grid clear of the scene, closing the gap as the scene fades.
-      // changing the mask repaints the whole screen, so it moves in a few coarse steps
+      // when narrow the dots scroll with the scene, so the gap never has to change
       if (r.dots && r.f !== undefined) {
-        const step = Math.round(r.shown * 8) / 8;
-        const key = `${r.cx} ${r.cy} ${r.f} ${step}`;
+        const gap = narrow.matches ? 1 : r.shown;
+        const key = `${r.cx} ${r.cy} ${r.f} ${gap}`;
         if (key !== r.dotsKey) {
           r.dotsKey = key;
           r.dots.style.setProperty("--scene-x", r.cx + "px");
           r.dots.style.setProperty("--scene-y", r.cy + "px");
-          r.dots.style.setProperty("--scene-r0", r.f * 0.42 * step + "px");
-          r.dots.style.setProperty("--scene-r1", r.f * 0.8 * step + "px");
+          r.dots.style.setProperty("--scene-r0", r.f * 0.42 * gap + "px");
+          r.dots.style.setProperty("--scene-r1", r.f * 0.8 * gap + "px");
         }
       }
       if (r.shown > 0) startLoop(); // scrolled back up
@@ -3148,6 +3154,7 @@
     }, { passive: true });
 
     window.addEventListener("pointermove", (e) => {
+      if (e.pointerType !== "mouse") return; // a finger dragging to scroll must not tilt the scene
       r.mouseX = e.clientX / window.innerWidth - 0.5;
       r.mouseY = e.clientY / window.innerHeight - 0.5;
     }, { passive: true });

@@ -552,6 +552,21 @@ kbd {
     to { transform: translate(-30vw, -20vh) scale(0.9); }
 }
 
+/* single column home page: the diagram sits in the hero and scrolls with it. a fixed
+   canvas would move with a mobile address bar and wobble under the finger
+   (keep in sync with narrow in scenes.js) */
+@media (max-width: 1000px) {
+    #canvas,
+    .ambient-home {
+        position: absolute;
+    }
+
+    .ambient-home {
+        bottom: auto;
+        height: 100vh;
+    }
+}
+
 /* phones and tablets: drifts this slow are not worth keeping the GPU awake and
    draining the battery (keep in sync with lowPower in scenes.js) */
 @media (max-width: 860px), (pointer: coarse) {
