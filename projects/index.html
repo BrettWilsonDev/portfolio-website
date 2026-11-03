@@ -9,6 +9,7 @@
         content="brett wilson, brett wilson projects, Brett david Wilson, bdw.run, www.bdw.run, bdw, brett wilson dev, www.brettwilsondev.com, brettwilsondev.com, brettwilsondev projects, BrettWilson projects, SDL3, raylib, OpenGL, WebAssembly">
     <meta name="theme-color" content="#000000">
     <link rel="icon" type="image/x-icon" href="../assets/images/favicon.ico">
+    <link rel="preload" href="../assets/fonts/roboto-latin-var.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="../assets/styles/main.min.css">
     <link rel="stylesheet" href="../assets/styles/project.min.css">
     <script defer src="../assets/scripts/main.min.js"></script>
@@ -19,7 +20,7 @@
     <!-- nav:start -->
     <header class="site-header">
         <nav class="nav" aria-label="Main">
-            <a class="brand" href="../"><img class="brand-logo" src="../assets/images/favicon.ico" alt="" width="30" height="30"><span class="brand-name">Brett David Wilson</span></a>
+            <a class="brand" href="../"><img class="brand-logo" src="../assets/images/logo-64.webp" alt="" width="30" height="30"><span class="brand-name">Brett David Wilson</span></a>
             <div class="nav-menu" id="navMenu">
                 <ul class="nav-tabs">
                     <li><a class="aTabs" href="../">Home</a></li>
@@ -58,7 +59,7 @@
             <div class="project-container">
 
                 <article class="project-card">
-                    <img src="../assets/images/lpr-cpp.webp" alt="LPR Solver Toolset screenshot" loading="lazy">
+                    <img src="../assets/images/lpr-cpp.webp" alt="LPR Solver Toolset screenshot" fetchpriority="high">
                     <div class="card-body">
                         <span class="card-meta mono">C++ · WASM</span>
                         <h3><a href="https://brettwilsondev.github.io/linprog-toolset" target="_blank" rel="noopener">LPR Solver Toolset</a></h3>
@@ -71,7 +72,7 @@
                 </article>
 
                 <article class="project-card">
-                    <img src="../assets/images/lprTool.webp" alt="lpr-solver-tool screenshot" loading="lazy">
+                    <img src="../assets/images/lprTool.webp" alt="lpr-solver-tool screenshot" loading="lazy" decoding="async">
                     <div class="card-body">
                         <span class="card-meta mono">Python</span>
                         <h3><a href="https://brettwilsondev.github.io/LP-Prototype-Py-Apps/" target="_blank" rel="noopener">lpr-solver-tool</a></h3>
@@ -84,7 +85,7 @@
                 </article>
 
                 <article class="project-card">
-                    <img src="../assets/images/paint-tracker.webp" alt="paint-tracker screenshot" loading="lazy">
+                    <img src="../assets/images/paint-tracker.webp" alt="paint-tracker screenshot" loading="lazy" decoding="async">
                     <div class="card-body">
                         <span class="card-meta mono">JavaScript</span>
                         <h3><a href="https://www.bdw.run/scale-model-paint-tracker/" target="_blank" rel="noopener">paint-tracker</a></h3>
@@ -97,7 +98,7 @@
                 </article>
 
                 <article class="project-card">
-                    <img src="../assets/images/pokedexv2.webp" alt="pokedexv2 screenshot" loading="lazy">
+                    <img src="../assets/images/pokedexv2.webp" alt="pokedexv2 screenshot" loading="lazy" decoding="async">
                     <div class="card-body">
                         <span class="card-meta mono">JavaScript · PokéAPI</span>
                         <h3><a href="https://www.bdw.run/pokedexv2/" target="_blank" rel="noopener">pokedexv2</a></h3>
@@ -117,7 +118,7 @@
             <div class="project-container">
 
                 <article class="project-card">
-                    <img src="../assets/images/fe2.webp" alt="GLFrontier-Extended screenshot" loading="lazy">
+                    <img src="../assets/images/fe2.webp" alt="GLFrontier-Extended screenshot" loading="lazy" decoding="async">
                     <div class="card-body">
                         <span class="card-meta mono">C/C++ · OpenGL · Web</span>
                         <h3><a href="https://brettwilsondev.github.io/glfrontier-extended" target="_blank" rel="noopener">GLFrontier-Extended</a></h3>
@@ -130,7 +131,7 @@
                 </article>
 
                 <article class="project-card">
-                    <img src="../assets/images/space-invaders-mk2.webp" alt="space-invaders-mk2 screenshot" loading="lazy">
+                    <img src="../assets/images/space-invaders-mk2.webp" alt="space-invaders-mk2 screenshot" loading="lazy" decoding="async">
                     <div class="card-body">
                         <span class="card-meta mono">C++ · SDL3</span>
                         <h3><a href="https://www.bdw.run/space-invaders-mk2" target="_blank" rel="noopener">space-invaders-mk2</a></h3>
@@ -143,7 +144,7 @@
                 </article>
 
                 <article class="project-card">
-                    <img src="../assets/images/space-invaders-clone.webp" alt="space-invaders-clone screenshot" loading="lazy">
+                    <img src="../assets/images/space-invaders-clone.webp" alt="space-invaders-clone screenshot" loading="lazy" decoding="async">
                     <div class="card-body">
                         <span class="card-meta mono">C++ · raylib</span>
                         <h3><a href="https://www.bdw.run/space-invaders-clone" target="_blank" rel="noopener">space-invaders-clone</a></h3>

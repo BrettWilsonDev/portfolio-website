@@ -2,7 +2,22 @@
    brettwilsondev.com - shared styles
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=JetBrains+Mono:wght@400;600&display=swap');
+/* self-hosted so text does not wait on a third-party connection (latin subset, variable weight) */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300 700;
+    font-display: swap;
+    src: url('../fonts/roboto-latin-var.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'JetBrains Mono';
+    font-style: normal;
+    font-weight: 400 600;
+    font-display: swap;
+    src: url('../fonts/jetbrains-mono-latin-var.woff2') format('woff2');
+}
 
 /* reset (based on meyerweb reset v2.0, public domain) */
 html, body, div, span, applet, object, iframe,
@@ -54,7 +69,7 @@ table {
     --ink: #fff;
     --ink-dim: rgba(255, 255, 255, 0.72);
     --ink-faint: rgba(255, 255, 255, 0.45);
-    --panel: rgba(0, 0, 0, 0.42);
+    --panel: rgba(0, 0, 0, 0.55);
     --panel-solid: #0b0010;
     --line: rgba(255, 255, 255, 0.14);
     --ok: #7dff9b;
@@ -81,15 +96,32 @@ body {
     flex-direction: column;
     line-height: 1.5;
     color: var(--ink);
-    background: linear-gradient(-109.6deg, var(--bg-a) 13.4%, var(--bg-b) 100.2%);
-    background-size: 800% 800%;
-    animation: gradient 250s ease infinite;
+    background-color: var(--bg-a);
+}
+
+/* page gradient: two fixed layers cross-fading, which only the GPU has to redraw.
+   animating background-position instead would repaint the whole page every frame */
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    background: linear-gradient(-109.6deg, var(--bg-a) 13.4%, var(--bg-b) 100.2%) 14% 50% / 800% 800%;
+}
+
+body::after {
+    background-position: 90% 50%;
+    opacity: 0;
+    animation: gradient 125s ease infinite alternate;
 }
 
 @keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    to { opacity: 1; }
 }
 
 a {
@@ -128,11 +160,13 @@ kbd {
 
 #canvas {
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh; /* not 100%: must not change size as a mobile address bar slides away */
     z-index: -1;
     pointer-events: none;
+    opacity: 0; /* fades in once the renderer starts */
     transition: opacity 0.25s linear;
 }
 
@@ -148,7 +182,6 @@ kbd {
     background:
         radial-gradient(circle, rgba(255, 255, 255, 0.07) 1px, transparent 1.5px) 0 0 / 10px 10px,
         linear-gradient(90deg, rgba(43, 1, 91, 0.92), rgba(84, 1, 70, 0.9) 55%, rgba(122, 2, 54, 0.92));
-    backdrop-filter: blur(10px);
     box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
 }
 
@@ -380,7 +413,6 @@ kbd {
     background: var(--panel);
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    backdrop-filter: blur(3px);
 }
 
 .btn {
@@ -458,10 +490,21 @@ kbd {
     z-index: -1;
     overflow: hidden;
     pointer-events: none;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.13) 1.2px, transparent 1.7px) 0 0 / 22px 22px;
     -webkit-mask-image: radial-gradient(ellipse at 50% 40%, #000 30%, transparent 85%);
     mask-image: radial-gradient(ellipse at 50% 40%, #000 30%, transparent 85%);
-    animation: ambient-pan 120s linear infinite;
+}
+
+/* the dots, slightly oversized and moved with transform so panning never repaints.
+   the pan distance is a whole number of 22px tiles, so the loop is seamless */
+.ambient::before {
+    content: '';
+    position: absolute;
+    top: -22px;
+    right: 0;
+    bottom: 0;
+    left: -44px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.13) 1.2px, transparent 1.7px) 0 0 / 22px 22px;
+    animation: ambient-pan 24s linear infinite;
 }
 
 .ambient span {
@@ -469,21 +512,20 @@ kbd {
     width: 55vmax;
     height: 55vmax;
     border-radius: 50%;
-    filter: blur(80px);
     opacity: 0.6;
 }
 
 .ambient span:first-child {
     top: -20vmax;
     left: -15vmax;
-    background: radial-gradient(circle, rgba(204, 51, 0, 0.55), transparent 65%);
+    background: radial-gradient(circle, rgba(204, 51, 0, 0.5), rgba(204, 51, 0, 0.32) 25%, rgba(204, 51, 0, 0.1) 48%, transparent 68%);
     animation: ambient-drift-a 60s ease-in-out infinite alternate;
 }
 
 .ambient span:last-child {
     bottom: -25vmax;
     right: -15vmax;
-    background: radial-gradient(circle, rgba(90, 20, 180, 0.6), transparent 65%);
+    background: radial-gradient(circle, rgba(90, 20, 180, 0.55), rgba(90, 20, 180, 0.35) 25%, rgba(90, 20, 180, 0.11) 48%, transparent 68%);
     animation: ambient-drift-b 75s ease-in-out infinite alternate;
 }
 
@@ -499,7 +541,7 @@ kbd {
 }
 
 @keyframes ambient-pan {
-    to { background-position: 220px 110px; }
+    to { transform: translate(44px, 22px); }
 }
 
 @keyframes ambient-drift-a {
@@ -510,9 +552,28 @@ kbd {
     to { transform: translate(-30vw, -20vh) scale(0.9); }
 }
 
+/* phones and tablets: drifts this slow are not worth keeping the GPU awake and
+   draining the battery (keep in sync with lowPower in scenes.js) */
+@media (max-width: 860px), (pointer: coarse) {
+    body::before {
+        background-position: 57% 50%; /* the middle of the range the desktop gradient drifts through */
+    }
+
+    body::after {
+        display: none;
+    }
+
+    .ambient::before,
+    .ambient span:first-child,
+    .ambient span:last-child {
+        animation: none;
+    }
+}
+
 @media (prefers-reduced-motion: reduce) {
-    .ambient,
-    .ambient span {
+    .ambient::before,
+    .ambient span:first-child,
+    .ambient span:last-child {
         animation: none;
     }
 }
@@ -576,7 +637,7 @@ kbd {
         scroll-behavior: auto;
     }
 
-    body {
+    body::after {
         animation: none;
     }
 
@@ -584,5 +645,12 @@ kbd {
         opacity: 1;
         transform: none;
         transition: none;
+    }
+}
+
+@media print {
+    body::before,
+    body::after {
+        display: none;
     }
 }
